@@ -27,7 +27,10 @@ nltk.download('wordnet')
 
 glove_model = api.load("glove-wiki-gigaword-50")
 
-recipes = pd.read_csv("recipes.csv")
+from google.colab import drive
+drive.mount('/content/drive')
+
+recipes=pd.read_csv('/content/drive/MyDrive/recipes_w_search_terms.csv')
 
 recipes = recipes.sample(50000, random_state=42)  # Set random_state for reproducibility
 
